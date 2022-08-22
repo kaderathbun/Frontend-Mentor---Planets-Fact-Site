@@ -1,0 +1,120 @@
+// Mixins
+
+// Typography
+@mixin heading_h1 {
+  font-family: $font-heading-main;
+  font-weight: 500;
+  line-height: 103px;
+}
+
+@mixin heading_h2 {
+  font-family: $font-heading-main;
+  font-weight: 500;
+  line-height: 52px;
+}
+
+@mixin heading_h3 {
+  font-family: $font-heading-sub;
+  font-weight: 700;
+  letter-spacing: 2.6px;
+  line-height: 25px;
+}
+
+@mixin heading_h4 {
+  font-family: $font-heading-sub;
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 25px;
+}
+
+@mixin body {
+  font-family: $font-heading-sub;
+  font-weight: 100;
+  line-height: 22px;
+}
+
+// Buttons
+@mixin btn-s {
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  color: rgba($white, 0.5);
+  text-transform: uppercase;
+  padding: 15px 0;
+  margin: 0 20px;
+  @include heading_h3;
+  font-size: 0.75em;
+  font-weight: 300;
+  cursor: pointer;
+}
+
+@mixin btn-m {
+  border: 1px solid rgba($white, 0.2);
+  width: 30rem;
+  margin: 0;
+  padding: 10px;
+  color: $white;
+  text-align: start;
+  transition: background-color 0.5s ease-out;
+
+  &:hover {
+    background-color: rgba($hover, 0.2);
+  }
+}
+
+// Button States
+@mixin button-background-mercury {
+  @media only screen and (min-width: 768px) {
+    background-color: $blue-pale !important;
+  }
+}
+
+@mixin button-background-venus {
+  @media only screen and (min-width: 768px) {
+    background-color: $yellow !important;
+  }
+}
+
+@mixin button-background-earth {
+  @media only screen and (min-width: 768px) {
+    background-color: $purple !important;
+  }
+}
+
+@mixin button-background-mars {
+  @media only screen and (min-width: 768px) {
+    background-color: $orange-dark !important;
+  }
+}
+
+@mixin button-background-jupiter {
+  @media only screen and (min-width: 768px) {
+    background-color: $tomato !important;
+  }
+}
+
+@mixin button-background-saturn {
+  @media only screen and (min-width: 768px) {
+    background-color: $orange-strong !important;
+  }
+}
+
+@mixin button-background-uranus {
+  @media only screen and (min-width: 768px) {
+    background-color: $aqua !important;
+  }
+}
+
+@mixin button-background-neptune {
+  @media only screen and (min-width: 768px) {
+    background-color: $blue-strong !important;
+  }
+}
+
+
+// Nav states
+@mixin nav-border {
+  @media only screen and (max-width: 1440px) {
+    border-top: none !important;
+  }
+}

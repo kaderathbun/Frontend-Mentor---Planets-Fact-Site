@@ -1,0 +1,357 @@
+// Layout
+
+html,
+body {
+  min-width: 100%;
+}
+
+body {
+  height: 100vh;
+  font-family: $font-heading-sub;
+  color: white;
+  background-color: $purple-dark;
+  background-image: url(/assets/background-stars.svg);
+  background-position: top left;
+  background-repeat: repeat;
+  background-size: auto;
+  position: absolute;
+  z-index: -999;
+  animation: background_trans 45s infinite;
+  animation-timing-function: linear;
+  animation-direction: alternate-reverse;
+
+  a {
+    text-decoration: none;
+    color: rgba($white, 0.6);
+  }
+
+  li {
+    list-style: none;
+  }
+}
+
+nav {
+  width: 100%;
+}
+
+#navigation {
+  text-transform: uppercase;
+  height: auto;
+  position: relative;
+
+  .nav-container {
+    display: flex;
+    height: auto;
+    max-width: 575px;
+    margin: 0 auto;
+    padding: 20px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $purple-dark;
+
+    .logo {
+      font-family: $font-heading-main;
+      font-size: 2.8rem;
+      font-weight: 500;
+    }
+
+    .icon-hamburger {
+      width: 24px;
+      height: auto;
+      cursor: pointer;
+    }
+  }
+
+  //   js hidden default
+  .nav-menu {
+    display: none;
+    padding: 0 25px;
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    background-color: $purple-dark;
+    transform: translateY(-120%);
+
+    .nav-item {
+      text-transform: uppercase;
+      @include heading_h3;
+      font-size: 2.1rem;
+      max-width: 575px;
+      height: auto;
+      padding: 25px 0;
+      margin: 10px auto;
+      border-bottom: 2px solid rgba($white, 0.1);
+
+      &:nth-of-type(1) .bullet {
+        background-color: #def4fc;
+      }
+      &:nth-of-type(2) .bullet {
+        background-color: #f7cc7f;
+      }
+      &:nth-of-type(3) .bullet {
+        background-color: #545bfe;
+      }
+      &:nth-of-type(4) .bullet {
+        background-color: #ff6a45;
+      }
+      &:nth-of-type(5) .bullet {
+        background-color: #ecad7a;
+      }
+      &:nth-of-type(6) .bullet {
+        background-color: #fccb6b;
+      }
+      &:nth-of-type(7) .bullet {
+        background-color: #65f0d5;
+      }
+      &:nth-of-type(8) {
+        border-bottom: none;
+        &:nth-of-type(8) .bullet {
+          background-color: #497efa;
+        }
+      }
+    }
+
+    .item-container {
+      display: flex;
+      gap: 15px;
+    }
+
+    .bullet {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: white;
+    }
+
+    .chevron {
+      width: 8px;
+      height: 10px;
+      align-self: center;
+      margin-left: auto;
+    }
+  }
+}
+
+// js show menu
+.show-menu {
+  display: block !important;
+  transform: translateY(0) !important;
+  height: auto;
+}
+
+#main-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.5fr 4fr fit-content 1.5fr;
+  gap: 20px;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 5vh;
+
+  .btn-container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid rgba($white, 0.2);
+    border-bottom: 1px solid rgba($white, 0.2);
+
+    .btn {
+      @include btn-s;
+
+      &:hover,
+      &:focus {
+        color: $white;
+      }
+    }
+
+    .btn-structure {
+      span {
+        display: none;
+      }
+    }
+  }
+
+  .img-span {
+    width: 50%;
+    max-width: 310px;
+    height: auto;
+    padding: 10% 0;
+    position: relative;
+    z-index: -1;
+
+    .hero-img {
+      margin: 0 auto;
+      height: 100%;
+      width: 100%;
+    }
+
+    .img-surface {
+      position: absolute;
+      width: 50%;
+      max-width: 55%;
+      height: auto;
+      top: 50%;
+      right: 0;
+      left: 60%;
+      bottom: 0;
+      transform: rotate(-35deg);
+    }
+  }
+
+  .hero-main {
+    @include heading_h2;
+    font-size: 40px;
+    text-transform: uppercase;
+  }
+
+  .hero-desc {
+    font-size: 1.5rem;
+    @include body;
+    width: 87%;
+    max-width: 575px;
+  }
+
+  .source {
+    color: rgba($white, 0.5);
+    @include body;
+    margin-top: 15px;
+
+    span {
+      font-weight: 500;
+      text-decoration: underline;
+    }
+
+    .img-source {
+      display: inline-block;
+      margin-left: 5px;
+    }
+  }
+}
+
+#footer {
+  margin: 0 auto 5vh;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  max-width: 575px;
+
+  .planet-info-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 25px;
+    padding: 10px 15px;
+    border: 2px solid rgba($white, 0.1);
+    text-transform: uppercase;
+    color: rgba($white, 0.5);
+    font-size: 1.25rem;
+    @include body;
+    font-weight: 500;
+
+    .planet-data {
+      font-size: 2rem;
+      font-family: $font-heading-main;
+      color: $white;
+    }
+  }
+}
+
+// Document Themes
+// Buttons
+.btn-color-mercury {
+  color: $white !important;
+  border-bottom: 3px solid $blue-pale !important;
+  @include button-background-mercury;
+}
+.btn-color-venus {
+  color: $white !important;
+  border-bottom: 3px solid $yellow !important;
+  @include button-background-venus;
+}
+.btn-color-earth {
+  color: $white !important;
+  border-bottom: 3px solid $purple !important;
+  @include button-background-earth;
+}
+.btn-color-mars {
+  color: $white !important;
+  border-bottom: 3px solid $orange-dark !important;
+  @include button-background-mars;
+}
+.btn-color-jupiter {
+  color: $white !important;
+  border-bottom: 3px solid $tomato !important;
+  @include button-background-jupiter;
+}
+.btn-color-saturn {
+  color: $white !important;
+  border-bottom: 3px solid $orange-strong !important;
+  @include button-background-saturn;
+}
+.btn-color-uranus {
+  color: $white !important;
+  border-bottom: 3px solid $aqua !important;
+  @include button-background-uranus;
+}
+.btn-color-neptune {
+  color: $white !important;
+  border-bottom: 3px solid $blue-strong !important;
+  @include button-background-neptune;
+}
+
+// Nav items 1440px+
+.nav-item-mercury {
+  border-top: 3px solid $blue-pale !important;
+  @include nav-border;
+}
+.nav-item-venus {
+  border-top: 3px solid $yellow !important;
+  @include nav-border;
+}
+.nav-item-earth {
+  border-top: 3px solid $purple !important;
+  @include nav-border;
+}
+.nav-item-mars {
+  border-top: 3px solid $orange-dark !important;
+  @include nav-border;
+}
+.nav-item-jupiter {
+  border-top: 3px solid $tomato !important;
+  @include nav-border;
+}
+.nav-item-saturn {
+  border-top: 3px solid $orange-strong !important;
+  @include nav-border;
+}
+.nav-item-uranus {
+  border-top: 3px solid $aqua !important;
+  @include nav-border;
+}
+.nav-item-neptune {
+  border-top: 3px solid $blue-strong !important;
+  @include nav-border;
+}
+
+// Keyframes
+@keyframes background_trans {
+  0% {
+    background-position: 0 0;
+  }
+
+  10% {
+    background-position: 0 5%;
+  }
+
+  90% {
+    background-position: 0 95%;
+  }
+
+  100% {
+    background-position: 0 100%;
+  }
+}
